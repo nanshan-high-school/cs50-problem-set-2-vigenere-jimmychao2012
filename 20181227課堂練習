@@ -1,0 +1,43 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+//維吉妮亞加密法
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number;
+    int num;
+    cout << "請輸入字數";
+    cin >> number;
+    cout << "請輸入密碼字數";
+    cin >> num;
+    char a[number] = {0};
+    char b[num] = {0};
+    cout << "請輸入字串";
+    cin >> a;
+    cout << "請輸入密碼";
+    cin >> b;
+    
+    int c[number] = {0};
+    for(int i = 0, f = 0; i < number; i++ ,f++){
+        if(f == num){
+            f = 0;
+        }
+        c[i] = b[f];
+    }
+    for(int i = 0; i < number; i++){
+        a[i] = a[i] + c[i] - 'A';
+        if(a[i] >= 'Z'){
+            a[i] - 26;
+        }
+    }
+    cout << a;
+    
+    return 0;
+}
